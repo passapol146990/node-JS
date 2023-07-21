@@ -1,0 +1,83 @@
+สร้างเซิฟเวอร์
+
+
+1.npm init //อ้างอิงไปที่ไฟล์เพื่อสร้าง .json
+
+
+2.
+{
+  "name": "create-server",
+  "version": "1.0.0",
+  "description": "node js Passapol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Passapol Sutatam",
+  "license": "ISC"
+}
+
+
+3.index.js
+const http = require('http')
+
+const server = http.createServer((req,res)=>{
+    const html =`
+    <h1>Hello world</h1>
+    <p>Passapol</p>
+    `
+    res.write(html)
+    res.end()
+})
+server.listen(8080,()=>{
+    console.log("/////////////////////////////////")
+    console.log("/// start server in port 8080 ///")
+    console.log("/////////////////////////////////")
+})   
+
+
+4.กด run แล้ว ใส่ localhost:3000
+
+
+5.nodenon save auto
+npm install nodemon
+
+6.run คำสั่งที่คอมมายพร้อมด้วย npx nodemon index.js
+
+7.ไฟล์ package.json 
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www"
+  เพิ่ม start เข้าไป จากต้องพิมพ์ npx nodemon index.js --> npm start 
+
+
+
+
+
+
+
+
+
+
+Express
+1.cd WedExpress
+2.npm init
+3.npm install nodemon
+4.npm install express
+
+5.cd index.js
+const express = require('express')
+
+const app = express()
+
+app.use((req,res)=>{
+    res.send("Hello Express.js")
+})
+
+app.listen(8080,()=>{
+    console.log('start to port 8080')
+})
+
+test 
+https://comforting-chimera-6faff9.netlify.app/
